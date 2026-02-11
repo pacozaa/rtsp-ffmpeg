@@ -1,0 +1,21 @@
+{
+  "name": "rtsp-ffmpeg-demo",
+  "version": "1.0.0",
+  "description": "Demo application for rtsp-ffmpeg library",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "rtsp",
+    "ffmpeg",
+    "demo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.0",
+    "socket.io": "^4.8.0",
+    "rtsp-ffmpeg": "file:.."
+  }
+}

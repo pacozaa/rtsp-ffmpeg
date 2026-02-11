@@ -33,6 +33,16 @@ Lazy Node.js FFMpeg wrapper for streaming RTSP into MotionJPEG. It runs FFMpeg p
 - **Node.js**: Version 6 or higher
 - **FFmpeg**: Must be installed on your system
 
+## Demo
+
+Check out the [complete demo application](./demo) to see rtsp-ffmpeg in action! The demo includes:
+- 🎥 Real-time RTSP to JPEG streaming
+- 🖥️ Modern web interface with controls
+- 📊 Live FPS and frame statistics
+- Ready-to-run example with public test streams
+
+[Get started with the demo →](./demo/README.md)
+
 ## Installation
 
 1. **Install FFmpeg** on your system:
