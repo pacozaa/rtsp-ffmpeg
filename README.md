@@ -63,7 +63,7 @@ server.listen(6147, () => {
   console.log('Server listening on port 6147');
 });
 
-// RTSP stream URL
+// RTSP stream URL (replace with your own stream URL)
 const uri = 'rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov';
 const stream = new rtsp.FFMpeg({ input: uri });
 
@@ -113,6 +113,8 @@ app.get('/', (req, res) => {
 
 > **Note**: For better performance with large resolution images or high framerates, use canvas rendering instead of direct image source updates. See the [canvas example](https://github.com/agsh/rtsp-ffmpeg/blob/master/example/index-canvas.html) by [Seikon](https://github.com/Seikon).
 
+> **Testing**: The example above uses a public demo stream that may not always be available. Replace the URL with your own RTSP stream. If you need a test stream, you can set up a local RTSP server using tools like [mediamtx](https://github.com/bluenviron/mediamtx) or FFmpeg's built-in RTSP server.
+
 ### Multiple Streams Example
 
 For handling multiple camera streams, see [/example/server.js](/example/server.js).
@@ -138,7 +140,7 @@ const stream = new FFMpeg(options);
 | `input` | String | Yes | - | Stream URI (e.g., `rtsp://localhost:8554/stream`) |
 | `rate` | Number | No | `10` | Output framerate (frames per second) |
 | `resolution` | String | No | - | Output resolution in `WxH` format (e.g., `'640x480'`) |
-| `quality` | Number | No | `3` | JPEG compression quality level (1-31, lower is better) |
+| `quality` | Number | No | `3` | JPEG compression quality level (1-31, where 1 is highest quality and 31 is lowest quality) |
 | `arguments` | Array | No | `[]` | Custom FFmpeg arguments |
 
 #### Example
