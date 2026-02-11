@@ -300,6 +300,8 @@
         const url = URL.createObjectURL(blob);
         
         const img = new Image();
+        const cleanup = () => URL.revokeObjectURL(url);
+        
         img.onload = () => {
           // Set canvas size to match image on first frame
           if (!this.canvasInitialized) {
@@ -309,8 +311,9 @@
           }
           
           this.ctx.drawImage(img, 0, 0, this.canvas.width, this.canvas.height);
-          URL.revokeObjectURL(url);
+          cleanup();
         };
+        img.onerror = cleanup;
         img.src = url;
       }
 

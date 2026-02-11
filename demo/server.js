@@ -53,8 +53,11 @@ const rtspStreams = streams.map((stream, index) => {
   };
 });
 
-// Serve static files
-app.use(express.static(__dirname));
+// Serve static files (only socket.io client library)
+// Note: This is a demo application. For production use, consider:
+// - Adding rate limiting to prevent abuse
+// - Restricting static file access
+// - Adding authentication and authorization
 
 // Main page route
 app.get('/', (req, res) => {
