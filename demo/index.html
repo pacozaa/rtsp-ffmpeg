@@ -206,6 +206,7 @@
         this.isActive = false;
         this.frameCount = 0;
         this.startTime = null;
+        this.canvasInitialized = false;
         
         this.createCard();
       }
@@ -285,6 +286,7 @@
         }
 
         this.isActive = false;
+        this.canvasInitialized = false;
         this.status.classList.remove('active');
         this.startBtn.disabled = false;
         this.stopBtn.disabled = true;
@@ -300,9 +302,10 @@
         const img = new Image();
         img.onload = () => {
           // Set canvas size to match image on first frame
-          if (this.canvas.width === 0) {
+          if (!this.canvasInitialized) {
             this.canvas.width = img.width;
             this.canvas.height = img.height;
+            this.canvasInitialized = true;
           }
           
           this.ctx.drawImage(img, 0, 0, this.canvas.width, this.canvas.height);
